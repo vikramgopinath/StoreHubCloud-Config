@@ -1,0 +1,40 @@
+Spring Profiles configured for Job related application properties to use are as below.
+Argument to be used while deploying applications is (provide the job profile as below) 
+--spring.profiles.active=default,StoreMaster (OR) - local
+--spring.profiles.active=dev,InvValidDestination (OR) - kubernetes or dev machine
+ 
+etc.
+
+JOB PROFILES: Please add when ever a new job is introduced based on which application is using that job.
+Need a job profile per application(microservice).
+###################################################################
+Job Profile				Job Name
+###################################################################
+InvValidDestination			InvValidDestinationStgDBToFlatFileJob
+StoreMaster					StoreMasterStgDBToStoreMasterFileJob	
+AsnIn						AsnInStagingDBToQueueJob		
+Customer					CustomerStgDBToXMLJob
+Deal 						DealStgDbToFileJob
+DeliverySlot				DeliverySlotStagingDBToQueueJob
+Employee					EmployeeStgDBToEmployeeFileJob
+ExchangeRate				ExchangeRateStgDBToFileJob
+InventoryCount				InventoryCountStgDBToMntFileJob
+InventoryDocument			InventoryDocumentStgDBToMntFileJob
+InventoryLocation			InventoryLocationStgDBToMntFileJob
+ItemMaster					ItemMasterStgDBToItemMasterFileJob
+MerchHier					MercHierStgDBToFileJob
+OrgHier						OrgHierStgDbToFileJob
+Pricing 					PricingStgDBToFlatFileJob
+QueueToStgDB				QueueToStgDBJob
+RcvUnitAdj					RcvUnitAdjStagingDBToQueueJob
+ReturnToVendor				ReturnToVendorStgDBToQueueJob
+StockOrder					SOStagingDBToQueueJob
+StockLedger					StockLedgerStgDBToMntFileJob 
+Tax							TaxStgDbToFileJob
+Vendor						VendorStgDBToMntFileJob
+WebTransaction				WebTransactionStgDbToFileJob
+FileDistribution 			FileDistributionJob
+NotifyIncompleteJob			NotifyIncompleteJobsJob
+Purging						PurgingJob
+PurchaseOrder				POStagingDBToQueueJob
+InventoryRepOrder 			InventoryReplinishmentOrderStgDBToMntFileJob
